@@ -1,11 +1,11 @@
-package com.Factory;
+/*package com.Factory;
 
 import com.Pizza.*;
 
 public class NYPizzaStore extends PizzaStore {
 
     @Override
-    public Pizza createPizza(String type) {
+    public PizzaComposite createPizza(String type) {
         switch (type) {
             case "cheese":
                 return new NYStyleCheesePizza();
@@ -20,3 +20,5 @@ public class NYPizzaStore extends PizzaStore {
         }
     }
 }
+
+ */

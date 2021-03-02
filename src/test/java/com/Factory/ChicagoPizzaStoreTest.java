@@ -9,7 +9,7 @@ public class ChicagoPizzaStoreTest {
 
     @Test
     public void createCheesePizza() {
-        String chicagoCheese = new ChicagoStyleCheesePizza().getName();
+        String chicagoCheese = new PizzaComposite("Tasty Cheesy").getName();
 
         PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
         String pizzaName = chicagoPizzaStore.orderPizza("cheese").getName();

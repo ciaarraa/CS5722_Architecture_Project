@@ -1,12 +1,24 @@
-package com.Pizza;
+/*package com.Pizza;
 
-public class ChicagoStyleCheesePizza extends Pizza{
+import java.util.Iterator;
+
+public class ChicagoStyleCheesePizza extends PizzaComposite{
+
     public ChicagoStyleCheesePizza() {
-        name = "Chiago Style Sauce and Cheese";
-        dough = "Thick Crust";
+        PizzaComposite chicagoStyleCheese = new PizzaComposite("Tasty cheesy");
+        chicagoStyleCheese.add(new PizzaIngredient("Mozzarella", 600, 2.50F));
+
+       /* dough = "Thick Crust";
         sauce = "Tomato and Basil Sauce";
 
         toppings.add("Grated Cheese");
         toppings.add("Mozzarella");
     }
+
+    public PizzaComposite getPizza(){
+        return chicagoStyleCheese;
+    }
 }
+
+
+ */
