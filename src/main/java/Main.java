@@ -15,7 +15,7 @@ public class Main {
       //ordering cheese pizza from ny store
      // nyPizzaStore.orderPizza("cheese");
 
-      //ordering pepperoni pizza from chiago store
+      //ordering pepperoni pizza from chicago store
         chicagoPizzaStore.orderPizza("cheese");
 
 

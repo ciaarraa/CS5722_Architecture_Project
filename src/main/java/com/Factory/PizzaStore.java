@@ -12,6 +12,7 @@ public abstract class PizzaStore {
         //here we use the create method instead of the new keyword
         pizza = createPizza(type);
         pizza.getPrice();
+        pizza.print();
          //pizza.prepare();
        // pizza.bake();
        // pizza.cut();

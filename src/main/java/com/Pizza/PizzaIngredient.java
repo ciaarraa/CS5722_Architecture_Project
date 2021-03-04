@@ -20,4 +20,16 @@ public class PizzaIngredient extends PizzaComponent {
     public double getPrice(){
         return price;
     }
+
+    @Override
+    public String getName(){
+        return name;
+    }
+
+    @Override
+    public void print(){
+        System.out.println("Name: " + getName()+ " total calories: " + getCalories() + " total price: " + getPrice() + "." );
+    }
 }
+
+
