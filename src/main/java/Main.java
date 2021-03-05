@@ -8,15 +8,17 @@ public class Main {
 
     public static void main(String[] args){
 
-      // setting up the new york and chicago stores
-      PizzaStore nyPizzaStore = new NYPizzaStore();
-      PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
+        // setting up the new york and chicago stores
+        PizzaStore nyPizzaStore = new NYPizzaStore();
+        PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
 
-      // ordering cheese pizza from ny store
-      nyPizzaStore.orderPizza("cheese");
+        // ordering cheese pizza from ny store
+        nyPizzaStore.orderPizza("cheese");
+        nyPizzaStore.orderPizza("pepperoni");
 
-      // ordering pepperoni pizza from chicago store
-      chicagoPizzaStore.orderPizza("cheese");
+        // ordering pepperoni pizza from chicago store
+        chicagoPizzaStore.orderPizza("cheese");
+        chicagoPizzaStore.orderPizza("clam");
 
 
 
