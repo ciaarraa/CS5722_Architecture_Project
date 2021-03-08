@@ -1,9 +1,6 @@
-/*package com.Factory;
+package com.Factory;
 
-import com.Pizza.NYStyleClamPizza;
-import com.Pizza.NYStylePepperoniPizza;
-import com.Pizza.NYStyleVeggiePizza;
-
+import com.Pizza.*;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,18 +9,20 @@ public class NYPizzaStoreTest {
 
     @Test
     public void createCheesePizza() {
-        PizzaStore nyPizzaStore = new NYPizzaStore();
-        String pizzaName = nyPizzaStore.orderPizza("cheese").getName();
+        String nyCheese = new PizzaComposite("Tasty Cheesy").getName();
 
-        assertEquals("NY Style Sauce and Cheese", pizzaName);
+        PizzaStore NYPizzaStore = new NYPizzaStore();
+        String pizzaName = NYPizzaStore.orderPizza("cheese").getName();
+
+        assertEquals(nyCheese, pizzaName);
     }
 
     @Test
     public void createPepperoniPizza() {
         String nyPepperoni = new NYStylePepperoniPizza().getName();
 
-        PizzaStore nyPizzaStore = new NYPizzaStore();
-        String pizzaName = nyPizzaStore.orderPizza("pepperoni").getName();
+        PizzaStore NYPizzaStore = new NYPizzaStore();
+        String pizzaName = NYPizzaStore.orderPizza("pepperoni").getName();
 
         assertEquals(nyPepperoni, pizzaName);
     }
@@ -32,10 +31,11 @@ public class NYPizzaStoreTest {
     public void createVeggiePizza() {
         String nyVeggie = new NYStyleVeggiePizza().getName();
 
-        PizzaStore nyPizzaStore = new NYPizzaStore();
-        String pizzaName = nyPizzaStore.orderPizza("veggie").getName();
+        PizzaStore NYPizzaStore = new NYPizzaStore();
+        String pizzaName = NYPizzaStore.orderPizza("veggie").getName();
 
         assertEquals(nyVeggie, pizzaName);
+
     }
 
 
@@ -43,15 +43,13 @@ public class NYPizzaStoreTest {
     public void createClamPizza() {
         String nyClam = new NYStyleClamPizza().getName();
 
-        PizzaStore nyPizzaStore = new NYPizzaStore();
-        String pizzaName = nyPizzaStore.orderPizza("clam").getName();
+        PizzaStore NYPizzaStore = new NYPizzaStore();
+        String pizzaName = NYPizzaStore.orderPizza("clam").getName();
 
         assertEquals(nyClam, pizzaName);
+
     }
 
+
+
 }
-
-
-
- */
-

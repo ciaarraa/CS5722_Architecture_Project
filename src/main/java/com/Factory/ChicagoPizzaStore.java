@@ -25,41 +25,56 @@ public class ChicagoPizzaStore extends PizzaStore {
                 return chicagoStyleCheese;*/
 
            case "pepperoni":
+               PizzaTreeBuilder pepperoniPizza = new PizzaTreeBuilder("Chicago Pepperoni");
+               pepperoniPizza.addIngredient("Mozzarella", 600, 2.50);
+               pepperoniPizza.addIngredient("Pepperoni", 250, 2.50);
 
-                PizzaComposite chicagoStylePepperoni = new PizzaComposite("Chicago Pepperoni");
-                PizzaComposite PepperoniCheese = new PizzaComposite("Pepperoni Cheese");
-
-                PepperoniCheese.add(new PizzaIngredient("Mozzarella", 600, 2.50));
-                PepperoniCheese.add(new PizzaIngredient("Cheddar", 400, 1.50));
-
-                chicagoStylePepperoni.add(PepperoniCheese);
-                chicagoStylePepperoni.add(new PizzaIngredient("Pepperoni", 250, 2.50));
-
-                return chicagoStylePepperoni;
+               return pepperoniPizza.getPizza();
+//                PizzaComposite chicagoStylePepperoni = new PizzaComposite("Chicago Pepperoni");
+//                PizzaComposite PepperoniCheese = new PizzaComposite("Pepperoni Cheese");
+//
+//                PepperoniCheese.add(new PizzaIngredient("Mozzarella", 600, 2.50));
+//                PepperoniCheese.add(new PizzaIngredient("Cheddar", 400, 1.50));
+//
+//                chicagoStylePepperoni.add(PepperoniCheese);
+//                chicagoStylePepperoni.add(new PizzaIngredient("Pepperoni", 250, 2.50));
+//
+//                return chicagoStylePepperoni;
 
 
                 case "clam":
-                    PizzaComposite chicagoStlyeClam = new PizzaComposite("Chicago Clam");
+                    PizzaTreeBuilder clamPizza = new PizzaTreeBuilder("Chicago Clam");
+                    clamPizza.addIngredient("Cheddar", 500, 2.50);
+                    clamPizza.addIngredient("Pepperoni", 100, 4.00);
 
-                    chicagoStlyeClam.add(new PizzaIngredient("Cheddar", 250, 2.50));
-                    chicagoStlyeClam.add (new PizzaIngredient("Clam", 100, 4.00));
-
-                    return chicagoStlyeClam;
+                    return clamPizza.getPizza();
+//                    PizzaComposite chicagoStlyeClam = new PizzaComposite("Chicago Clam");
+//
+//                    chicagoStlyeClam.add(new PizzaIngredient("Cheddar", 250, 2.50));
+//                    chicagoStlyeClam.add (new PizzaIngredient("Clam", 100, 4.00));
+//
+//                    return chicagoStlyeClam;
 
 
             case "veggie":
-                PizzaComposite chicagoStlyeVeggie = new PizzaComposite("Chicago Veggie");
+                PizzaTreeBuilder veggiePizza = new PizzaTreeBuilder("Chicago Veggie");
+                veggiePizza.addIngredient("Peppers", 40, 1.00);
+                veggiePizza.addIngredient("Mushroom", 60, 1.00);
+                veggiePizza.addIngredient("Onion", 55, 1.00);
 
-                PizzaComposite mixedVeg = new PizzaComposite ( "Mixed Veg");
-
-                mixedVeg.add(new PizzaIngredient("Peppers", 40, 1.00));
-                mixedVeg.add(new PizzaIngredient("Mushroom", 60, 1.00));
-                mixedVeg.add(new PizzaIngredient("Onion", 55, 1.00));
-
-
-                chicagoStlyeVeggie.add(new PizzaIngredient("Cheddar", 250, 2.50));
-                chicagoStlyeVeggie.add (mixedVeg);
-                return chicagoStlyeVeggie;
+                return veggiePizza.getPizza();
+//                PizzaComposite chicagoStlyeVeggie = new PizzaComposite("Chicago Veggie");
+//
+//                PizzaComposite mixedVeg = new PizzaComposite ( "Mixed Veg");
+//
+//                mixedVeg.add(new PizzaIngredient("Peppers", 40, 1.00));
+//                mixedVeg.add(new PizzaIngredient("Mushroom", 60, 1.00));
+//                mixedVeg.add(new PizzaIngredient("Onion", 55, 1.00));
+//
+//
+//                chicagoStlyeVeggie.add(new PizzaIngredient("Cheddar", 250, 2.50));
+//                chicagoStlyeVeggie.add (mixedVeg);
+//                return chicagoStlyeVeggie;
 
             default:
                 return null;
