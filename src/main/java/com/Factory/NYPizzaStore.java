@@ -11,29 +11,29 @@ public class NYPizzaStore extends PizzaStore {
             case "cheese":
 
                 PizzaTreeBuilder cheesePizza = new PizzaTreeBuilder("Tasty Cheesy");
-                cheesePizza.addIngredient("cheese", 200, 400);
+                cheesePizza.addIngredient("cheese");
+                cheesePizza.addIngredient("mozzarella");
 
                 return cheesePizza.getPizza();
 
             case "pepperoni":
                 PizzaTreeBuilder pepperoniPizza = new PizzaTreeBuilder("New York Pepperoni");
-                pepperoniPizza.addIngredient("Mozzarella", 600, 2.50);
-                pepperoniPizza.addIngredient("Pepperoni", 250, 2.50);
-
+                pepperoniPizza.addIngredient("mozzarella");
+                pepperoniPizza.addIngredient("pepperoni");
                 return pepperoniPizza.getPizza();
 
             case "clam":
                 PizzaTreeBuilder clamPizza = new PizzaTreeBuilder("New York Clam");
-                clamPizza.addIngredient("Cheddar", 500, 2.50);
-                clamPizza.addIngredient("Pepperoni", 100, 4.00);
+                clamPizza.addIngredient("cheese");
+                clamPizza.addIngredient("clam");
 
                 return clamPizza.getPizza();
 
             case "veggie":
                 PizzaTreeBuilder veggiePizza = new PizzaTreeBuilder("New York Veggie");
-                veggiePizza.addIngredient("Peppers", 40, 1.00);
-                veggiePizza.addIngredient("Mushroom", 60, 1.00);
-                veggiePizza.addIngredient("Onion", 55, 1.00);
+                veggiePizza.addIngredient("peppers");
+                veggiePizza.addIngredient("mushroom");
+                veggiePizza.addIngredient("onion");
 
                 return veggiePizza.getPizza();
 

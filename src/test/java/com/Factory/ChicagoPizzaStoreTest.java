@@ -9,44 +9,43 @@ public class ChicagoPizzaStoreTest {
 
     @Test
     public void createCheesePizza() {
-        String chicagoCheese = new PizzaComposite("Tasty Cheesy").getName();
 
         PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
         String pizzaName = chicagoPizzaStore.orderPizza("cheese").getName();
 
-        assertEquals(chicagoCheese, pizzaName);
+        assertEquals("Tasty Cheesy", pizzaName);
+
     }
 
     @Test
     public void createPepperoniPizza() {
-        String chicagoPepperoni = new ChicagoStylePepperoniPizza().getName();
+
 
         PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
         String pizzaName = chicagoPizzaStore.orderPizza("pepperoni").getName();
 
-        assertEquals(chicagoPepperoni, pizzaName);
+        assertEquals("Chicago Pepperoni", pizzaName);
     }
 
     @Test
     public void createVeggiePizza() {
-        String chicagoVeggie = new ChicagoStyleVeggiePizza().getName();
+
 
         PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
         String pizzaName = chicagoPizzaStore.orderPizza("veggie").getName();
 
-        assertEquals(chicagoVeggie, pizzaName);
+        assertEquals("Chicago Veggie", pizzaName);
 
     }
 
 
     @Test
     public void createClamPizza() {
-        String chicagoClam = new ChicagoStyleClamPizza().getName();
 
         PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
         String pizzaName = chicagoPizzaStore.orderPizza("clam").getName();
 
-        assertEquals(chicagoClam, pizzaName);
+        assertEquals("Chicago Clam", pizzaName);
 
     }
 

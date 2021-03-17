@@ -1,6 +1,8 @@
 package com.Pizza;
 
-public class PizzaIngredient extends PizzaComponent {
+import com.IngredientPrototype;
+
+public class PizzaIngredient extends PizzaComponent implements IngredientPrototype {
     private String name;
     private int calories;
     private double price;
@@ -29,6 +31,10 @@ public class PizzaIngredient extends PizzaComponent {
     @Override
     public void print(){
         System.out.println("Name: " + getName()+ " total calories: " + getCalories() + " total price: " + getPrice() + "." );
+    }
+
+    public PizzaIngredient clone(){
+       return this;
     }
 }
 

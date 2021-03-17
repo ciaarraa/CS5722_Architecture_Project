@@ -1,17 +1,22 @@
 package com.Builder;
 
+
+import com.Factory.IngredientsRegistry;
 import com.Pizza.PizzaComposite;
-import com.Pizza.PizzaIngredient;
 
 public class PizzaTreeBuilder {
     private PizzaComposite pizzaComposite;
+    private IngredientsRegistry ingredientsRegistry;
+
 
     public PizzaTreeBuilder(String name){
-        pizzaComposite = new PizzaComposite(name);
+        this.pizzaComposite = new PizzaComposite(name);
+        this.ingredientsRegistry = new IngredientsRegistry();
+        ingredientsRegistry.initialiseIngredients();
    }
 
-   public void addIngredient(String name, int calories, double price){
-        pizzaComposite.add(new PizzaIngredient(name, calories, price));
+   public void addIngredient(String name){
+        pizzaComposite.add(ingredientsRegistry.getIngredient(name));
    }
 
    public void addPizza(String name){

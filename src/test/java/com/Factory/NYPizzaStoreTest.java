@@ -9,22 +9,20 @@ public class NYPizzaStoreTest {
 
     @Test
     public void createCheesePizza() {
-        String nyCheese = new PizzaComposite("Tasty Cheesy").getName();
-
         PizzaStore NYPizzaStore = new NYPizzaStore();
         String pizzaName = NYPizzaStore.orderPizza("cheese").getName();
 
-        assertEquals(nyCheese, pizzaName);
+        assertEquals("Tasty Cheesy", pizzaName);
     }
 
     @Test
     public void createPepperoniPizza() {
-        String nyPepperoni = new NYStylePepperoniPizza().getName();
+
 
         PizzaStore NYPizzaStore = new NYPizzaStore();
         String pizzaName = NYPizzaStore.orderPizza("pepperoni").getName();
 
-        assertEquals(nyPepperoni, pizzaName);
+        assertEquals("New York Pepperoni", pizzaName);
     }
 
     @Test
@@ -34,19 +32,18 @@ public class NYPizzaStoreTest {
         PizzaStore NYPizzaStore = new NYPizzaStore();
         String pizzaName = NYPizzaStore.orderPizza("veggie").getName();
 
-        assertEquals(nyVeggie, pizzaName);
+        assertEquals("New York Veggie", pizzaName);
 
     }
 
 
     @Test
     public void createClamPizza() {
-        String nyClam = new NYStyleClamPizza().getName();
 
         PizzaStore NYPizzaStore = new NYPizzaStore();
         String pizzaName = NYPizzaStore.orderPizza("clam").getName();
 
-        assertEquals(nyClam, pizzaName);
+        assertEquals("New York Clam", pizzaName);
 
     }
 
