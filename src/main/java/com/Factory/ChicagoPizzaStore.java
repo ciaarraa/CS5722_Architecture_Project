@@ -1,48 +1,39 @@
 package com.Factory;
 
-import com.Builder.PizzaTreeBuilder;
-import com.Pizza.*;
+
+import com.Command.PizzaHandler;
+import com.Command.PizzaHandlerFactory;
+import com.Pizza.PizzaComposite;
+
+
+import java.util.HashMap;
 
 public class ChicagoPizzaStore extends PizzaStore {
+    private HashMap<String, PizzaHandler> pizzaHandlers;
+    private PizzaHandlerFactory pizzaHandlerFactory;
+
+    public ChicagoPizzaStore (){
+        createHandlers();
+    }
 
     @Override
-
     public PizzaComposite createPizza(String type) {
-        switch (type) {
-            case "cheese":
+        PizzaHandler pizzaHandler = lookUpHandler(type);
+        return pizzaHandler.getPizza();
+    }
 
-               PizzaTreeBuilder cheesePizza = new PizzaTreeBuilder("Tasty Cheesy");
-                cheesePizza.addIngredient("cheese");
-                cheesePizza.addIngredient("mozzarella");
+    private void createHandlers(){
+        pizzaHandlers = new HashMap<>();
+        pizzaHandlerFactory= new PizzaHandlerFactory(this);
 
-                return cheesePizza.getPizza();
+        pizzaHandlers.put("cheese", pizzaHandlerFactory.getHandler("cheese"));
+        pizzaHandlers.put("pepperoni", pizzaHandlerFactory.getHandler("pepperoni"));
+        pizzaHandlers.put("clam", pizzaHandlerFactory.getHandler("clam"));
+        pizzaHandlers.put("veggie", pizzaHandlerFactory.getHandler("veggie"));
+    }
 
-           case "pepperoni":
-               PizzaTreeBuilder pepperoniPizza = new PizzaTreeBuilder("Chicago Pepperoni");
-               pepperoniPizza.addIngredient("mozzarella");
-               pepperoniPizza.addIngredient("pepperoni");
+    private PizzaHandler lookUpHandler(String handlerName){
+        return pizzaHandlers.get(handlerName);
 
-               return pepperoniPizza.getPizza();
-
-
-                case "clam":
-                    PizzaTreeBuilder clamPizza = new PizzaTreeBuilder("Chicago Clam");
-                    clamPizza.addIngredient("cheese");
-                    clamPizza.addIngredient("clam");
-
-                    return clamPizza.getPizza();
-
-
-            case "veggie":
-                PizzaTreeBuilder veggiePizza = new PizzaTreeBuilder("Chicago Veggie");
-                veggiePizza.addIngredient("peppers");
-                veggiePizza.addIngredient("mushroom");
-                veggiePizza.addIngredient("onion");
-
-                return veggiePizza.getPizza();
-
-            default:
-                return null;
-        }
     }
 }
