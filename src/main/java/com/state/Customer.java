@@ -28,12 +28,4 @@ public class Customer {
     public int getCustomerPoints() {
         return this._customerLevel.getPointsTotal();
     }
-
-    public void statement(){
-
-            System.out.println("This customer has " + this.getCustomerPoints() + " Bonus points.");
-
-            System.out.println("Points modifier: " + _customerLevel.getPointsModifier());
-
-        }
 }

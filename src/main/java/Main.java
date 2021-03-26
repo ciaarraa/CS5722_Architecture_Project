@@ -26,25 +26,14 @@ public class Main {
         pizzas.add(nyPizza2);
 
         // ordering pepperoni pizza from chicago store
-        //chicagoPizzaStore.orderPizza("veggie");
+//        chicagoPizzaStore.orderPizza("veggie");
        // chicagoPizzaStore.orderPizza("clam");
 
-      Customer aCustomer = new Customer();
+        Customer aCustomer = new Customer();
 
-       Order anOrder = new Order(aCustomer.get_customerLevel(), pizzas);
+        Order anOrder = new Order(aCustomer.get_customerLevel(), pizzas);
 
-       anOrder.addNewPoints();
-        aCustomer.statement();
-
-   /*   Customer aCustomer = new Customer("Gold")
-      Order anOrder=new Order (new Order, 3);
-      aCustomer.addOrer(anOrder);
-      String statement = aCcustomer.statement();*/
-
-      /*  Customer customerTom = new Customer("GoldLevel");
-        Rental rented=new Rental(newRelease, 3);
-        customerTom.addRental(rented);
-        String statement = customerTom.statement();*/
+        anOrder.addNewPoints();
     }
 }
 
