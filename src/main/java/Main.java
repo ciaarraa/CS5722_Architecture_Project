@@ -2,6 +2,7 @@ import com.Factory.ChicagoPizzaStore;
 import com.Factory.NYPizzaStore;
 import com.Factory.PizzaStore;
 import com.Pizza.Pizza;
+import com.Pizza.PizzaComponent;
 import com.Pizza.PizzaComposite;
 import com.state.Customer;
 import com.state.Order;
@@ -18,10 +19,10 @@ public class Main {
         PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
 
         // ordering cheese pizza from ny store
-        PizzaComposite nyPizza1 = nyPizzaStore.orderPizza("cheese");
-        PizzaComposite nyPizza2 = nyPizzaStore.orderPizza("pepperoni");
+        PizzaComponent nyPizza1 = nyPizzaStore.orderPizza("cheese");
+        PizzaComponent nyPizza2 = nyPizzaStore.orderPizza("pepperoni");
 
-        ArrayList<PizzaComposite> pizzas = new ArrayList<>();
+        ArrayList<PizzaComponent> pizzas = new ArrayList<>();
         pizzas.add(nyPizza1);
         pizzas.add(nyPizza2);
 

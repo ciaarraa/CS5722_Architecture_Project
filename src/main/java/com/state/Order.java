@@ -1,6 +1,7 @@
 package com.state;
 
 import com.Pizza.Pizza;
+import com.Pizza.PizzaComponent;
 import com.Pizza.PizzaComposite;
 
 import java.lang.reflect.Array;
@@ -8,9 +9,9 @@ import java.util.ArrayList;
 
 public class Order {
     private CustomerLevel _customerLevel;
-    private ArrayList<PizzaComposite> pizzasInOrder;
+    private ArrayList<PizzaComponent> pizzasInOrder;
 
-    public Order(CustomerLevel _customerLevel, ArrayList<PizzaComposite> pizzasInOrder) {
+    public Order(CustomerLevel _customerLevel, ArrayList<PizzaComponent> pizzasInOrder) {
         this._customerLevel = _customerLevel;
         this.pizzasInOrder = pizzasInOrder;
     }
