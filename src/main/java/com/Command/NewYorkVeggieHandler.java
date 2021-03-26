@@ -1,19 +1,17 @@
 package com.Command;
 
 import com.Builder.PizzaTreeBuilder;
-import com.Factory.ChicagoPizzaStore;
 import com.Factory.PizzaStore;
 import com.Pizza.PizzaComponent;
-import com.Pizza.PizzaComposite;
 
-public class ChicagoVeggieHandler extends PizzaHandler {
-
-    public ChicagoVeggieHandler(com.Factory.PizzaStore pizzaStore) {
+public class NewYorkVeggieHandler extends PizzaHandler {
+    public NewYorkVeggieHandler(PizzaStore pizzaStore) {
         super(pizzaStore);
     }
 
-    public PizzaComponent getPizza(){
-        PizzaTreeBuilder veggiePizza = new PizzaTreeBuilder("Chicago Veggie");
+    @Override
+    public PizzaComponent getPizza() {
+        PizzaTreeBuilder veggiePizza = new PizzaTreeBuilder("New York Veggie");
         veggiePizza.addIngredient("peppers");
         veggiePizza.addIngredient("mushroom");
         veggiePizza.addIngredient("onion");
@@ -21,4 +19,3 @@ public class ChicagoVeggieHandler extends PizzaHandler {
         return veggiePizza.getPizza();
     }
 }
-

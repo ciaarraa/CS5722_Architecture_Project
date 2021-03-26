@@ -1,44 +1,36 @@
 package com.Factory;
 
 import com.Builder.PizzaTreeBuilder;
+import com.Command.*;
 import com.Pizza.*;
 
+import java.util.HashMap;
+
 public class NYPizzaStore extends PizzaStore {
+    private HashMap<String, PizzaHandler> pizzaHandlers;
+    private NewYorkPizzaHandlerFactory newYorkPizzaHandlerFactory;
+
+
+
     @Override
-
-    public PizzaComposite createPizza(String type) {
-        switch (type) {
-            case "cheese":
-
-                PizzaTreeBuilder cheesePizza = new PizzaTreeBuilder("Tasty Cheesy");
-                cheesePizza.addIngredient("cheese");
-                cheesePizza.addIngredient("mozzarella");
-
-                return cheesePizza.getPizza();
-
-            case "pepperoni":
-                PizzaTreeBuilder pepperoniPizza = new PizzaTreeBuilder("New York Pepperoni");
-                pepperoniPizza.addIngredient("mozzarella");
-                pepperoniPizza.addIngredient("pepperoni");
-                return pepperoniPizza.getPizza();
-
-            case "clam":
-                PizzaTreeBuilder clamPizza = new PizzaTreeBuilder("New York Clam");
-                clamPizza.addIngredient("cheese");
-                clamPizza.addIngredient("clam");
-
-                return clamPizza.getPizza();
-
-            case "veggie":
-                PizzaTreeBuilder veggiePizza = new PizzaTreeBuilder("New York Veggie");
-                veggiePizza.addIngredient("peppers");
-                veggiePizza.addIngredient("mushroom");
-                veggiePizza.addIngredient("onion");
-
-                return veggiePizza.getPizza();
-
-            default:
-                return null;
-        }
+    public PizzaComponent createPizza(String type) {
+        PizzaHandler pizzaHandler = lookUpHandler(type);
+        return pizzaHandler.getPizza();
     }
+
+    @Override
+    public HashMap<String, PizzaHandler>createHandlers(){
+    pizzaHandlers = new HashMap<>();
+    newYorkPizzaHandlerFactory = new NewYorkPizzaHandlerFactory(this);
+
+    pizzaHandlers.put("cheese", newYorkPizzaHandlerFactory.getHandler("cheese"));
+    pizzaHandlers.put("pepperoni", newYorkPizzaHandlerFactory.getHandler("pepperoni"));
+    pizzaHandlers.put("clam", newYorkPizzaHandlerFactory.getHandler("clam"));
+    pizzaHandlers.put("veggie", newYorkPizzaHandlerFactory.getHandler("veggie"));
+
+    return pizzaHandlers;
 }
+}
+
+
+

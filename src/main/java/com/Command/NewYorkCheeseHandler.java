@@ -1,20 +1,18 @@
 package com.Command;
 
 import com.Builder.PizzaTreeBuilder;
-import com.Factory.ChicagoPizzaStore;
 import com.Factory.PizzaStore;
 import com.Pizza.PizzaComponent;
-import com.Pizza.PizzaComposite;
 
-public class ChicagoCheeseHandler extends PizzaHandler {
+public class NewYorkCheeseHandler extends PizzaHandler {
 
-    public ChicagoCheeseHandler(com.Factory.PizzaStore pizzaStore){
+    public NewYorkCheeseHandler(PizzaStore pizzaStore){
         super(pizzaStore);
     }
 
     public PizzaComponent getPizza(){
 
-        PizzaTreeBuilder cheesePizza = new PizzaTreeBuilder("Tasty Cheesy");
+        PizzaTreeBuilder cheesePizza = new PizzaTreeBuilder("New York Tasty Cheesy");
         cheesePizza.addIngredient("cheese");
         cheesePizza.addIngredient("mozzarella");
 

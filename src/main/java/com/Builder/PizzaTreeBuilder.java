@@ -3,6 +3,7 @@ package com.Builder;
 
 import com.Factory.IngredientsRegistry;
 import com.Pizza.PizzaComposite;
+import com.Pizza.PizzaComponent;
 
 public class PizzaTreeBuilder {
     private PizzaComposite pizzaComposite;
@@ -23,7 +24,7 @@ public class PizzaTreeBuilder {
         pizzaComposite.add(new PizzaComposite(name));
    }
 
-   public PizzaComposite getPizza(){
+   public PizzaComponent getPizza(){
         return pizzaComposite;
    }
 }

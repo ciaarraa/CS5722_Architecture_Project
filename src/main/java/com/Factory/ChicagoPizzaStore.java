@@ -2,38 +2,44 @@ package com.Factory;
 
 
 import com.Command.PizzaHandler;
-import com.Command.PizzaHandlerFactory;
-import com.Pizza.PizzaComposite;
+import com.Command.ChicagoPizzaHandlerFactory;
+import com.Pizza.PizzaComponent;
 
 
 import java.util.HashMap;
 
 public class ChicagoPizzaStore extends PizzaStore {
     private HashMap<String, PizzaHandler> pizzaHandlers;
-    private PizzaHandlerFactory pizzaHandlerFactory;
+    private ChicagoPizzaHandlerFactory chicagoPizzaHandlerFactory;
 
-    public ChicagoPizzaStore (){
-        createHandlers();
-    }
+
 
     @Override
-    public PizzaComposite createPizza(String type) {
+    public PizzaComponent createPizza(String type) {
         PizzaHandler pizzaHandler = lookUpHandler(type);
         return pizzaHandler.getPizza();
     }
 
-    private void createHandlers(){
-        pizzaHandlers = new HashMap<>();
-        pizzaHandlerFactory= new PizzaHandlerFactory(this);
 
-        pizzaHandlers.put("cheese", pizzaHandlerFactory.getHandler("cheese"));
-        pizzaHandlers.put("pepperoni", pizzaHandlerFactory.getHandler("pepperoni"));
-        pizzaHandlers.put("clam", pizzaHandlerFactory.getHandler("clam"));
-        pizzaHandlers.put("veggie", pizzaHandlerFactory.getHandler("veggie"));
+    public  HashMap<String, PizzaHandler> createHandlers(){
+        pizzaHandlers = new HashMap<>();
+        chicagoPizzaHandlerFactory = new ChicagoPizzaHandlerFactory(this);
+
+        pizzaHandlers.put("cheese", chicagoPizzaHandlerFactory.getHandler("cheese"));
+        pizzaHandlers.put("pepperoni", chicagoPizzaHandlerFactory.getHandler("pepperoni"));
+        pizzaHandlers.put("clam", chicagoPizzaHandlerFactory.getHandler("clam"));
+        pizzaHandlers.put("veggie", chicagoPizzaHandlerFactory.getHandler("veggie"));
+
+        return pizzaHandlers;
     }
 
-    private PizzaHandler lookUpHandler(String handlerName){
+
+   /* private PizzaHandler lookUpHandler(String handlerName){
         return pizzaHandlers.get(handlerName);
 
+
+
     }
+
+    */
 }

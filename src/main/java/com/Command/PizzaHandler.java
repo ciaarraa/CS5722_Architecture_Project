@@ -1,14 +1,16 @@
 package com.Command;
 
-import com.Factory.ChicagoPizzaStore;
-import com.Pizza.PizzaComposite;
+
+import com.Factory.PizzaStore;
+import com.Pizza.PizzaComponent;
+
 
 public abstract class PizzaHandler {
-    protected ChicagoPizzaStore chicagoPizzaStore;
+    protected PizzaStore PizzaStore;
 
-    public PizzaHandler(ChicagoPizzaStore chicagoPizzaStore) {
-        this.chicagoPizzaStore = chicagoPizzaStore;
+    public PizzaHandler(PizzaStore PizzaStore) {
+        this.PizzaStore = PizzaStore;
     }
 
-    public abstract PizzaComposite getPizza();
+    public abstract PizzaComponent getPizza();
 }

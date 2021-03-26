@@ -12,7 +12,7 @@ public class NYPizzaStoreTest {
         PizzaStore NYPizzaStore = new NYPizzaStore();
         String pizzaName = NYPizzaStore.orderPizza("cheese").getName();
 
-        assertEquals("Tasty Cheesy", pizzaName);
+        assertEquals("New York Tasty Cheesy", pizzaName);
     }
 
     @Test
@@ -50,3 +50,4 @@ public class NYPizzaStoreTest {
 
 
 }
+
