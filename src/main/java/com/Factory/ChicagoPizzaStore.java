@@ -1,48 +1,45 @@
 package com.Factory;
 
-import com.Builder.PizzaTreeBuilder;
-import com.Pizza.*;
+
+import com.Command.PizzaHandler;
+import com.Command.ChicagoPizzaHandlerFactory;
+import com.Pizza.PizzaComponent;
+
+
+import java.util.HashMap;
 
 public class ChicagoPizzaStore extends PizzaStore {
+    private HashMap<String, PizzaHandler> pizzaHandlers;
+    private ChicagoPizzaHandlerFactory chicagoPizzaHandlerFactory;
+
+
 
     @Override
-
-    public PizzaComposite createPizza(String type) {
-        switch (type) {
-            case "cheese":
-
-               PizzaTreeBuilder cheesePizza = new PizzaTreeBuilder("Tasty Cheesy");
-                cheesePizza.addIngredient("cheese");
-                cheesePizza.addIngredient("mozzarella");
-
-                return cheesePizza.getPizza();
-
-           case "pepperoni":
-               PizzaTreeBuilder pepperoniPizza = new PizzaTreeBuilder("Chicago Pepperoni");
-               pepperoniPizza.addIngredient("mozzarella");
-               pepperoniPizza.addIngredient("pepperoni");
-
-               return pepperoniPizza.getPizza();
-
-
-                case "clam":
-                    PizzaTreeBuilder clamPizza = new PizzaTreeBuilder("Chicago Clam");
-                    clamPizza.addIngredient("cheese");
-                    clamPizza.addIngredient("clam");
-
-                    return clamPizza.getPizza();
-
-
-            case "veggie":
-                PizzaTreeBuilder veggiePizza = new PizzaTreeBuilder("Chicago Veggie");
-                veggiePizza.addIngredient("peppers");
-                veggiePizza.addIngredient("mushroom");
-                veggiePizza.addIngredient("onion");
-
-                return veggiePizza.getPizza();
-
-            default:
-                return null;
-        }
+    public PizzaComponent createPizza(String type) {
+        PizzaHandler pizzaHandler = lookUpHandler(type);
+        return pizzaHandler.getPizza();
     }
+
+
+    public  HashMap<String, PizzaHandler> createHandlers(){
+        pizzaHandlers = new HashMap<>();
+        chicagoPizzaHandlerFactory = new ChicagoPizzaHandlerFactory(this);
+
+        pizzaHandlers.put("cheese", chicagoPizzaHandlerFactory.getHandler("cheese"));
+        pizzaHandlers.put("pepperoni", chicagoPizzaHandlerFactory.getHandler("pepperoni"));
+        pizzaHandlers.put("clam", chicagoPizzaHandlerFactory.getHandler("clam"));
+        pizzaHandlers.put("veggie", chicagoPizzaHandlerFactory.getHandler("veggie"));
+
+        return pizzaHandlers;
+    }
+
+
+   /* private PizzaHandler lookUpHandler(String handlerName){
+        return pizzaHandlers.get(handlerName);
+
+
+
+    }
+
+    */
 }

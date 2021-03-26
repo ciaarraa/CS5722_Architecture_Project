@@ -1,7 +1,5 @@
 package com.Pizza;
 
-import com.IngredientPrototype;
-
 public class PizzaIngredient extends PizzaComponent implements IngredientPrototype {
     private String name;
     private int calories;

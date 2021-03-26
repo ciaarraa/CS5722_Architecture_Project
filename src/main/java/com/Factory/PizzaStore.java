@@ -1,13 +1,18 @@
 package com.Factory;
 
 
+import com.Command.PizzaHandler;
 import com.Pizza.Pizza;
+import com.Pizza.PizzaComponent;
 import com.Pizza.PizzaComposite;
 
-public abstract class PizzaStore {
+import java.util.HashMap;
 
-    public PizzaComposite orderPizza(String type) {
-        PizzaComposite pizza;
+public abstract class PizzaStore {
+    HashMap<String, PizzaHandler> pizzaHandlers;
+
+    public PizzaComponent orderPizza(String type) {
+        PizzaComponent pizza;
 
         //here we use the create method instead of the new keyword
         pizza = createPizza(type);
@@ -20,5 +25,13 @@ public abstract class PizzaStore {
        return pizza;
     }
 
-    abstract PizzaComposite createPizza(String type);
+    protected PizzaHandler lookUpHandler(String handlerName){
+        pizzaHandlers = createHandlers();
+        return pizzaHandlers.get(handlerName);
+
+    }
+
+    abstract PizzaComponent createPizza(String type);
+
+    abstract HashMap<String, PizzaHandler> createHandlers();
 }
