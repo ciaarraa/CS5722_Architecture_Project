@@ -34,6 +34,7 @@ public class Main {
         Order anOrder = new Order(aCustomer.get_customerLevel(), pizzas);
 
         anOrder.addNewPoints();
+        aCustomer.statement();
     }
 }
 
