@@ -10,9 +10,11 @@ public class IngredientsRegistry {
 
     public IngredientsRegistry(){
         pizzaIngredients =new HashMap<String, PizzaIngredient>();
+        initialiseIngredients();
+
     }
 
-    public void addNewIngredient(String name, int calories, double price){
+    private void addNewIngredient(String name, int calories, double price){
         if (this.checkIngredientExists(name) == false) {
             pizzaIngredients.put(name, new PizzaIngredient(name, calories, price));
         }
@@ -20,7 +22,7 @@ public class IngredientsRegistry {
 
     
 
-    public void initialiseIngredients(){
+    private void initialiseIngredients(){
         this.addNewIngredient("peppers", 20, 1.50);
         this.addNewIngredient("mozzarella", 100, 1.50);
         this.addNewIngredient("cheese", 100, 1.50);
@@ -43,7 +45,7 @@ public class IngredientsRegistry {
     }
 
     public PizzaIngredient getIngredient(String name){
-        if(checkIngredientExists(name) ==true){
+        if(checkIngredientExists(name) == true){
             return pizzaIngredients.get(name).clone();
         }else{
             return null;
