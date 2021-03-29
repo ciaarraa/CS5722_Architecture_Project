@@ -13,7 +13,6 @@ public class PizzaTreeBuilder {
     public PizzaTreeBuilder(String name){
         this.pizzaComposite = new PizzaComposite(name);
         this.ingredientsRegistry = new IngredientsRegistry();
-        ingredientsRegistry.initialiseIngredients();
    }
 
    public void addIngredient(String name){
