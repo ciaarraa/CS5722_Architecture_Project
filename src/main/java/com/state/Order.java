@@ -38,4 +38,26 @@ public class Order {
                 currentPoints + (pizzasInOrder.size() * _customerLevel.getPointsModifier())
         );
     }
+
+    public void addPizza(PizzaComponent pizzaComponent) {
+        pizzasInOrder.add(pizzaComponent);
+    }
+
+    public void printOrderStatement() {
+        for (PizzaComponent pizza : pizzasInOrder) {
+            pizza.print();
+        }
+    }
+
+    private String getPizzaInfo(int i) {
+        return pizzasInOrder.get(i).printString();
+    }
+
+    public ArrayList<String> getPizzasInOrder() {
+        ArrayList<String> pizzaNames = new ArrayList<>();
+        for (PizzaComponent pizza : pizzasInOrder) {
+            pizzaNames.add(pizza.printString());
+        }
+        return pizzaNames;
+    }
 }

@@ -12,13 +12,18 @@ public class ChicagoPizzaStore extends PizzaStore {
     private HashMap<String, PizzaHandler> pizzaHandlers;
     private ChicagoPizzaHandlerFactory chicagoPizzaHandlerFactory;
 
+    public ChicagoPizzaStore(){
+        super();
+    }
 
 
     @Override
-    public PizzaComponent createPizza(String type) {
+   /* public PizzaComponent createPizza(String type) {
         PizzaHandler pizzaHandler = lookUpHandler(type);
         return pizzaHandler.getPizza();
     }
+
+    */
 
 
     public  HashMap<String, PizzaHandler> createHandlers(){

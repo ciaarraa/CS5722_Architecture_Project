@@ -4,22 +4,31 @@ import com.Builder.PizzaTreeBuilder;
 import com.Command.*;
 import com.Pizza.*;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class NYPizzaStore extends PizzaStore {
     private HashMap<String, PizzaHandler> pizzaHandlers;
     private NewYorkPizzaHandlerFactory newYorkPizzaHandlerFactory;
+    private ArrayList<String> pizzaNames;
 
+    public NYPizzaStore(){
+        super();
+    }
 
-
-    @Override
+   /* @Override
     public PizzaComponent createPizza(String type) {
         PizzaHandler pizzaHandler = lookUpHandler(type);
         return pizzaHandler.getPizza();
     }
 
+    */
+
     @Override
-    public HashMap<String, PizzaHandler>createHandlers(){
+    public HashMap<String, PizzaHandler> createHandlers(){
     pizzaHandlers = new HashMap<>();
     newYorkPizzaHandlerFactory = new NewYorkPizzaHandlerFactory(this);
 
@@ -30,6 +39,8 @@ public class NYPizzaStore extends PizzaStore {
 
     return pizzaHandlers;
 }
+
+
 }
 
 
