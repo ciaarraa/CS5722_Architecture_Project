@@ -2,10 +2,11 @@ package com.Observer;
 
 import java.util.ArrayList;
 
-public class Imenu implements Imenuable{
-    private ArrayList<Icustomer>customers;
+public class Imenu implements Imenuable {
+    private ArrayList<Icustomer> customers;
     private int version = 0;
-    public Imenu(){
+
+    public Imenu() {
         customers = new ArrayList<Icustomer>();
     }
 
@@ -18,16 +19,22 @@ public class Imenu implements Imenuable{
     @Override
     public void removeCustomer(Icustomer deleteCustomer) {
         int customerIndex = customers.indexOf(deleteCustomer);
-        System.out.println("Customers: "+(customerIndex + 1) + "deleted");
+        System.out.println("Customers: " + (customerIndex + 1) + "deleted");
         customers.remove(customerIndex);
 
     }
 
     @Override
     public void notifyCustomers() {
-        for(Icustomer customer: customers){
+        for (Icustomer customer : customers) {
             customer.update(version);
         }
 
+    }
+
+    public void setVersion(int version) {
+
+        this.version = version;
+        notifyCustomers();
     }
 }

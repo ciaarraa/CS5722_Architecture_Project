@@ -1,6 +1,9 @@
 import com.Factory.ChicagoPizzaStore;
 import com.Factory.NYPizzaStore;
 import com.Factory.PizzaStore;
+import com.Observer.Icustomer;
+import com.Observer.Imenu;
+import com.Observer.SimpleCustomer;
 import com.Pizza.Pizza;
 import com.Pizza.PizzaComponent;
 import com.Pizza.PizzaComposite;
@@ -13,6 +16,13 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args){
+      /* Imenu imenu = new Imenu();
+        SimpleCustomer customers = new SimpleCustomer(imenu);
+        imenu.registerCustomer((Icustomer) new Customer());
+
+        imenu.notifyCustomers();*/
+
+
 
         // setting up the new york and chicago stores
         PizzaStore nyPizzaStore = new NYPizzaStore();

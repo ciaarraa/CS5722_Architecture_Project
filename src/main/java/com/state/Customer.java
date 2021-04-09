@@ -1,11 +1,21 @@
 package com.state;
 
+import com.Observer.Icustomer;
+import com.Observer.Imenuable;
+
 public class Customer {
+ /*   private int version;
+    private Imenuable imenu;*/
     public static final int REGULAR = 1;
     public static final int SILVER = 2;
     public static final int GOLD = 3;
 
     private CustomerLevel _customerLevel;
+
+   // public Customer(Imenuable imenu){
+       // this.imenu =imenu;
+       // imenu.registerCustomer(this);
+  //  }
 
 
 
@@ -36,4 +46,15 @@ public class Customer {
         System.out.println("Points modifier: " + _customerLevel.getPointsModifier());
 
     }
+
+  /*  @Override
+    public void update(int version) {
+        this.version = version;
+        display();
+
+    }
+
+    public void display(){
+        System.out.println("This version of menu is number:" +version);
+    }*/
 }
