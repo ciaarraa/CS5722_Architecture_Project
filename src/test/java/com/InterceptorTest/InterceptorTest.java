@@ -8,12 +8,14 @@ import com.Interceptor.*;
 public class InterceptorTest {
     public static void main(String[] args) {
         CardPaymentInterface card = new MasterCard();
-        Interceptor logger = new Logger(); // example defines concrete interceptors here.. ???
+        MasterCard masterCard = new MasterCard();
+        Logger logger = new Logger(); // example defines concrete interceptors here.. ???
         Dispatcher dispatcher = new Dispatcher();
-        PaymentEventContextObject paymentEventContext = new PaymentEventContextObject();
+        PaymentEventContextObject paymentEventContext = new PaymentEventContextObject(masterCard);
 
         //Dispatcher.theInstance().registerLogger(logger);
-        dispatcher.registerLogger( logger );
+        dispatcher.registerInterceptor( logger );
+
 
         double testAmount = 0.0;
         //String testAuthToken = UUID.randomUUID().toString();
