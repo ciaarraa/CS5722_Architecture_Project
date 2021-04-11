@@ -1,10 +1,12 @@
 package com.Interceptor;
-import com.PaymentAdapters.CardPaymentInterface;
 import com.PaymentAdapters.MasterCard;
 import com.PaymentAdapters.TransactionCurrency;
 import com.PaymentAdapters.TransactionType;
-
 import java.time.Instant;
+
+// Equivalent to Ciara's CircleContextObject
+// Something is missing here, we need to link to the (concrete?) interceptor
+// Don't have time to fix now!
 
 public class PaymentEventContextObject implements PaymentEvent {
     private MasterCard masterCard;
@@ -19,13 +21,7 @@ public class PaymentEventContextObject implements PaymentEvent {
         this.amount = masterCard.getAmount();
         this.transactionCurrency = masterCard.getCurrency();
         this.transactionType = masterCard.getTransactionType();
-        this.transactionTimestamp = this.getTimestamp();
-    }
-    @Override
-    public Long getTimestamp() {
-        Instant instant = Instant.now();
-        long timeStampMillis = instant.toEpochMilli();
-        return timeStampMillis;
+        this.transactionTimestamp = this.getTransactionTimestamp();
     }
 
     @Override
@@ -44,5 +40,9 @@ public class PaymentEventContextObject implements PaymentEvent {
     }
 
     @Override
-    public Long getTransactionTimestamp() { return transactionTimestamp; }
+    public Long getTransactionTimestamp() {
+        Instant instant = Instant.now();
+        long timeStampMillis = instant.toEpochMilli();
+        return timeStampMillis;
+    }
 }

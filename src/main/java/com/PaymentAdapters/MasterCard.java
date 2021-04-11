@@ -1,6 +1,5 @@
 package com.PaymentAdapters;
 import com.Interceptor.Dispatcher;
-import com.Interceptor.Logger;
 import com.Interceptor.PaymentEventContextObject;
 
 import java.util.concurrent.TimeUnit;

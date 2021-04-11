@@ -3,7 +3,9 @@ import com.PaymentAdapters.*;
 import com.Interceptor.*;
 //import java.util.UUID;
 
-
+// Similar to the main in Ciara's circle example,
+// but I have moved some of the "framework side" stuff to the mastercard class
+// need arraylist and add concrete interceptor here
 
 public class InterceptorTest {
     public static void main(String[] args) {
