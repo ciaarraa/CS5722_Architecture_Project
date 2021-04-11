@@ -42,7 +42,6 @@ public class PaymentEventContextObject implements PaymentEvent {
     @Override
     public Long getTransactionTimestamp() {
         Instant instant = Instant.now();
-        long timeStampMillis = instant.toEpochMilli();
-        return timeStampMillis;
+        return instant.toEpochMilli();
     }
 }

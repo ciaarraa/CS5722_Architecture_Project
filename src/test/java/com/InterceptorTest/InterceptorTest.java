@@ -1,6 +1,7 @@
 package com.InterceptorTest;
 import com.PaymentAdapters.*;
 import com.Interceptor.*;
+import java.util.ArrayList;
 //import java.util.UUID;
 
 // Similar to the main in Ciara's circle example,
@@ -9,14 +10,17 @@ import com.Interceptor.*;
 
 public class InterceptorTest {
     public static void main(String[] args) {
-        CardPaymentInterface card = new MasterCard();
-        MasterCard masterCard = new MasterCard();
-        Logger logger = new Logger(); // example defines concrete interceptors here.. ???
-        Dispatcher dispatcher = new Dispatcher();
+        CardPaymentInterface card = new MasterCard(); //needed for payment test purposes
+        MasterCard masterCard = new MasterCard(); //needed for context object
+        Logger logger = new Logger(); // concrete interceptor
         PaymentEventContextObject paymentEventContext = new PaymentEventContextObject(masterCard);
 
+        ArrayList<Interceptor> concreteInterceptorList = new ArrayList<>();
+        concreteInterceptorList.add(logger);
+
         //Dispatcher.theInstance().registerLogger(logger);
-        dispatcher.registerInterceptor( logger );
+        //Dispatcher dispatcher = new Dispatcher();
+        //dispatcher.registerInterceptor( logger );
 
 
         double testAmount = 0.0;

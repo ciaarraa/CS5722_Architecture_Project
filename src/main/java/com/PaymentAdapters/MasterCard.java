@@ -1,4 +1,5 @@
 package com.PaymentAdapters;
+import com.Interceptor.Logger;
 import com.Interceptor.Dispatcher;
 import com.Interceptor.PaymentEventContextObject;
 
@@ -30,6 +31,7 @@ public class MasterCard implements CardPaymentInterface{
         this.transactionCurrency = currency;
         this.transactionType = transactionType;
         Dispatcher dispatcher = new Dispatcher();
+        //dispatcher.registerInterceptor( logger );
 
         transactionInstructionSentSuccess = sendTransactionInstructionToMastercardServer();
         if (transactionInstructionSentSuccess) {
