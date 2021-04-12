@@ -1,5 +1,4 @@
 package com.PaymentAdapters;
-import com.Interceptor.Logger;
 import com.Interceptor.Dispatcher;
 import com.Interceptor.PaymentEventContextObject;
 
@@ -11,7 +10,12 @@ public class MasterCard implements CardPaymentInterface{
     private double transactionAmount;
     private TransactionType transactionType;
     private TransactionCurrency transactionCurrency;
+    public Dispatcher dispatcher;
 
+    public MasterCard(){
+        this.transactionAmount = transactionAmount;
+        this.dispatcher = new Dispatcher();
+    }
     @Override
     public boolean makePayment(double billFinalAmount) {
         TransactionCurrency defaultCurrencyDuringPrototyping = EUR;
@@ -30,8 +34,6 @@ public class MasterCard implements CardPaymentInterface{
         this.transactionAmount = amount;
         this.transactionCurrency = currency;
         this.transactionType = transactionType;
-        Dispatcher dispatcher = new Dispatcher();
-        //dispatcher.registerInterceptor( logger );
 
         transactionInstructionSentSuccess = sendTransactionInstructionToMastercardServer();
         if (transactionInstructionSentSuccess) {
