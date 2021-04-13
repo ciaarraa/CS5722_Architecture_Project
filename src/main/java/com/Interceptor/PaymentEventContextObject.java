@@ -4,17 +4,13 @@ import com.PaymentAdapters.TransactionCurrency;
 import com.PaymentAdapters.TransactionType;
 import java.time.Instant;
 
-// Equivalent to Ciara's CircleContextObject
-// Something is missing here, we need to link to the (concrete?) interceptor
-// Don't have time to fix now!
-
 public class PaymentEventContextObject implements PaymentEvent {
     private MasterCard masterCard;
     private double amount;
     private TransactionCurrency transactionCurrency;
     private TransactionType transactionType;
     private Long transactionTimestamp;
-    //private CardPaymentInterface card;
+
 
     public PaymentEventContextObject(MasterCard masterCard){
         this.masterCard = masterCard;

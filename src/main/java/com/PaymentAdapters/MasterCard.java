@@ -13,7 +13,6 @@ public class MasterCard implements CardPaymentInterface{
     public Dispatcher dispatcher;
 
     public MasterCard(){
-        this.transactionAmount = transactionAmount;
         this.dispatcher = new Dispatcher();
     }
     @Override
@@ -40,7 +39,9 @@ public class MasterCard implements CardPaymentInterface{
             transactionConfirmationReceived = receiveTransactionConfirmationFromMastercardServer();
         }
         if (transactionConfirmationReceived) {
+            // create new context object per event
             PaymentEventContextObject paymentContext = new PaymentEventContextObject(this);
+            // and pass it to the dispatcher when calling back
             dispatcher.dispatchPaymentLogger(paymentContext);
         }
 

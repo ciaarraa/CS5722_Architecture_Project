@@ -2,9 +2,6 @@ package com.InterceptorTest;
 import com.PaymentAdapters.*;
 import com.Interceptor.*;
 
-// Similar to the main in Ciara's circle example,
-// but I have moved the "framework side" stuff to the mastercard class
-
 public class InterceptorTest {
     public static void main(String[] args) {
         MasterCard masterCard = new MasterCard();

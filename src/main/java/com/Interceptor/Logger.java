@@ -1,7 +1,7 @@
 package com.Interceptor;
 // This our concreteInterceptor,
-// except that we are reading values from the framework via the context object and logging them
-// rather than 'writing' back into the framework via the context object as in the circle example
+// we are reading values from the framework via the context object and logging them.
+// Timestamp is generated during execution of the logger rather than coming from the framework
 
 public class Logger implements Interceptor {
 

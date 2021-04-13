@@ -6,8 +6,6 @@ package com.PaymentAdapters;
   without changing existing code.
 */
 
-// From the interceptor point of view, CardPaymentInterface is "ICircle", and Mastercard is "Circle"
-
 public interface CardPaymentInterface {
     public boolean makePayment(double billFinalAmount);
     public boolean refundPayment(double refundFinalAmount);

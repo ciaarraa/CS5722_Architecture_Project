@@ -1,8 +1,8 @@
 package com.Interceptor;
 import com.PaymentAdapters.TransactionCurrency;
 import com.PaymentAdapters.TransactionType;
-// This is our version of the "Observer" in the circle example.
-// We only have getters, no setters. The circle example just had one setter
+// This is the "observer"
+// We only have getters, no setters.
 public interface PaymentEvent {
     public Double getAmount();
     public TransactionCurrency getTransactionCurrency();

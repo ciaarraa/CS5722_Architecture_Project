@@ -1,16 +1,11 @@
 package com.Interceptor;
 import java.util.ArrayList;
 
-// Like Ciara's circle example, we use array list (rather than Vector) to register interceptors into.
-// Here we use log rather than onEnd as the callback to be performed.
+// Used array list (rather than Vector + clone) to register interceptors into.
 
 public class Dispatcher{
 
     private ArrayList<Interceptor> interceptorList;
-
-    public Dispatcher(ArrayList<Interceptor> interceptorList) {
-        this.interceptorList = interceptorList;
-    }
 
     public Dispatcher() {
         this.interceptorList = new ArrayList<>();
