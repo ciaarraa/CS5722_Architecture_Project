@@ -12,7 +12,7 @@ public class Tomatoes extends PizzaDecorator{
 
     @Override
     public String getName() {
-        return pizza.getName()+", Tomatoes (5.20)";
+        return pizza.getName()+" Tomatoes (5.20)";
     }
 
 
