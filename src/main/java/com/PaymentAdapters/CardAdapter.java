@@ -22,10 +22,11 @@ public class CardAdapter implements StripePaymentInterface{
 
     @Override
     public boolean refundStripePayment(double refundFinalAmount, String AuthToken) {
-        return card.makePayment(refundFinalAmount);
+        return card.refundPayment(refundFinalAmount);
     }
 
     private String getStripeAuth() {
+        // Dummy code to mock getting a real token
         String uuid = UUID.randomUUID().toString();
         return uuid;
     }
