@@ -17,15 +17,6 @@ public class ChicagoPizzaStore extends PizzaStore {
     }
 
 
-    @Override
-   /* public PizzaComponent createPizza(String type) {
-        PizzaHandler pizzaHandler = lookUpHandler(type);
-        return pizzaHandler.getPizza();
-    }
-
-    */
-
-
     public  HashMap<String, PizzaHandler> createHandlers(){
         pizzaHandlers = new HashMap<>();
         chicagoPizzaHandlerFactory = new ChicagoPizzaHandlerFactory(this);
