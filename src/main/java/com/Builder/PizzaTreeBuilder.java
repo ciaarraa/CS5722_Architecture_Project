@@ -1,7 +1,6 @@
 package com.Builder;
 
 
-import com.Factory.IngredientsRegistry;
 import com.Pizza.PizzaComposite;
 import com.Pizza.PizzaComponent;
 

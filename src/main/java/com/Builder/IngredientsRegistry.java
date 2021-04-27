@@ -1,4 +1,4 @@
-package com.Factory;
+package com.Builder;
 
 import com.Pizza.PizzaIngredient;
 
@@ -15,7 +15,7 @@ public class IngredientsRegistry {
     }
 
     private void addNewIngredient(String name, int calories, double price){
-        if (this.checkIngredientExists(name) == false) {
+        if (!this.checkIngredientExists(name)) {
             pizzaIngredients.put(name, new PizzaIngredient(name, calories, price));
         }
     }
@@ -45,7 +45,7 @@ public class IngredientsRegistry {
     }
 
     public PizzaIngredient getIngredient(String name){
-        if(checkIngredientExists(name) == true){
+        if(checkIngredientExists(name)){
             return pizzaIngredients.get(name).clone();
         }else{
             return null;

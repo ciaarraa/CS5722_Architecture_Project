@@ -1,11 +1,7 @@
 package com.Builder;
 
-import com.Factory.IngredientsRegistry;
 import com.Pizza.PizzaComponent;
-import com.Pizza.PizzaComposite;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 

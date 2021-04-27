@@ -1,7 +1,7 @@
 package com.Command;
 
 import com.Factory.ChicagoPizzaStore;
-import com.Factory.IngredientsRegistry;
+import com.Builder.IngredientsRegistry;
 import com.Factory.PizzaStore;
 import com.Pizza.PizzaComponent;
 import com.Pizza.PizzaComposite;
