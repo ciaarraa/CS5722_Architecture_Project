@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Order {
     private CustomerLevel _customerLevel;
     private ArrayList<PizzaComponent> pizzasInOrder;
+    private double orderPrice;
 
     public Order(CustomerLevel _customerLevel, ArrayList<PizzaComponent> pizzasInOrder) {
         this._customerLevel = _customerLevel;
@@ -59,5 +60,13 @@ public class Order {
             pizzaNames.add(pizza.printString());
         }
         return pizzaNames;
+    }
+
+    public double getOrderPrice(){
+        orderPrice = 0;
+        for (PizzaComponent pizza : pizzasInOrder) {
+            orderPrice += pizza.getPrice();
+        }
+        return orderPrice;
     }
 }

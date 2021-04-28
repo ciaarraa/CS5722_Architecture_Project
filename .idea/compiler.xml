@@ -10,5 +10,8 @@
         <module name="CS5722_Project" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wrapper" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
