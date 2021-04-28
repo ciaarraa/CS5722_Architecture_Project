@@ -1,9 +1,14 @@
 package com.GUI;
 
+import com.Controller.Controller;
 import com.Factory.ChicagoPizzaStore;
 import com.Factory.NYPizzaStore;
 import com.Factory.PizzaStore;
 import com.Pizza.PizzaComponent;
+import com.Views.OrderSummaryView;
+import com.Views.PaymentWindowView;
+import com.Views.ShopFrontView;
+import com.Views.StoreFrontView;
 import com.state.Customer;
 import com.state.Order;
 
@@ -32,8 +37,9 @@ public class GUI_Test_Main {
             ShopFrontView shopFrontView = new ShopFrontView();
             StoreFrontView storeFrontView = new StoreFrontView();
             OrderSummaryView orderSummaryView = new OrderSummaryView();
+            PaymentWindowView paymentWindowView = new PaymentWindowView();
 
-           Controller controller = new Controller( frame, model, shopFrontView,storeFrontView, orderSummaryView);
+           Controller controller = new Controller( frame, model, shopFrontView,storeFrontView, orderSummaryView, paymentWindowView);
 
             frame.pack();
             frame.setVisible(true);

@@ -1,6 +1,10 @@
 package com.GUI;
 
 import com.Factory.PizzaStore;
+import com.PaymentAdapters.CardPaymentInterface;
+import com.PaymentAdapters.MasterCard;
+import com.PaymentAdapters.Stripe;
+import com.PaymentAdapters.StripeAdapter;
 import com.Pizza.Pizza;
 import com.state.Customer;
 import com.state.Order;
@@ -13,8 +17,9 @@ public class Model {
     private Order order;
     private ArrayList<PizzaStore> pizzaStores;
     private int selectedStore;
+    private CardPaymentInterface card;
 
-    public Model(Customer customer, Order order, ArrayList<PizzaStore> pizzaStores){
+    public Model(Customer customer, Order order, ArrayList<PizzaStore> pizzaStores) {
         this.customer = customer;
         this.order = order;
         this.pizzaStores = pizzaStores;
@@ -25,10 +30,11 @@ public class Model {
         return selectedStore;
     }
 
-    public void setSelectedStore(int i){
+    public void setSelectedStore(int i) {
         selectedStore = i;
 
     }
+
     public Order getOrder() {
         return order;
     }
@@ -45,4 +51,15 @@ public class Model {
         this.pizzaStores = pizzaStores;
     }
 
+    public void setCard(String card) {
+        if (card.equals( "Stripe")) {
+            this.card = new StripeAdapter(new Stripe());
+        } else {
+            this.card = new MasterCard();
+        }
+    }
+
+    public CardPaymentInterface getCard() {
+        return card;
+    }
 }
