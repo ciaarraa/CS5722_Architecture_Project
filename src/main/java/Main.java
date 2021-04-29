@@ -1,12 +1,7 @@
-import com.Factory.ChicagoPizzaStore;
+/*import com.Factory.ChicagoPizzaStore;
 import com.Factory.NYPizzaStore;
 import com.Factory.PizzaStore;
-import com.Observer.Icustomer;
-import com.Observer.Imenu;
-import com.Observer.SimpleCustomer;
-import com.Pizza.Pizza;
 import com.Pizza.PizzaComponent;
-import com.Pizza.PizzaComposite;
 import com.state.Customer;
 import com.state.Order;
 
@@ -16,10 +11,6 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args){
-        Imenu imenu = new Imenu();
-
-
-
 
         // setting up the new york and chicago stores
         PizzaStore nyPizzaStore = new NYPizzaStore();
@@ -37,8 +28,7 @@ public class Main {
 //        chicagoPizzaStore.orderPizza("veggie");
        // chicagoPizzaStore.orderPizza("clam");
 
-        Customer aCustomer = new Customer(imenu);
-        imenu.notifyCustomers();
+        Customer aCustomer = new Customer();
 
         Order anOrder = new Order(aCustomer.get_customerLevel(), pizzas);
 
@@ -46,5 +36,9 @@ public class Main {
         aCustomer.statement();
     }
 }
+
+ */
+
+
 
 

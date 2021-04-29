@@ -31,7 +31,12 @@ public class PizzaIngredientTest {
     @Test
     public void testClone() {
         PizzaIngredient pizzaIngredientClone = pizzaIngredient.clone();
-        assertEquals(pizzaIngredientClone, pizzaIngredient);
+        assertEquals(pizzaIngredientClone.getName(), pizzaIngredient.getName());
+
+        assertEquals(pizzaIngredientClone.getCalories(), pizzaIngredient.getCalories());
+
+        assertEquals(pizzaIngredientClone.getPrice(), pizzaIngredient.getPrice(), 0.000001);
+
     }
 
 
