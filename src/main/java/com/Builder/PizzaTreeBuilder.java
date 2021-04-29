@@ -1,7 +1,6 @@
 package com.Builder;
 
 
-import com.Factory.IngredientsRegistry;
 import com.Pizza.PizzaComposite;
 import com.Pizza.PizzaComponent;
 
@@ -13,7 +12,6 @@ public class PizzaTreeBuilder {
     public PizzaTreeBuilder(String name){
         this.pizzaComposite = new PizzaComposite(name);
         this.ingredientsRegistry = new IngredientsRegistry();
-        ingredientsRegistry.initialiseIngredients();
    }
 
    public void addIngredient(String name){

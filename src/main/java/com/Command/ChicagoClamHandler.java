@@ -8,15 +8,13 @@ import com.Pizza.PizzaComposite;
 import java.util.logging.Handler;
 
 public class ChicagoClamHandler extends PizzaHandler {
-    private final String name = "Chicago Clam";
 
     public ChicagoClamHandler(PizzaStore pizzaStore) {
         super(pizzaStore);
-        setName(name);
     }
 
     public PizzaComponent getPizza(){
-        PizzaTreeBuilder clamPizza = new PizzaTreeBuilder(name);
+        PizzaTreeBuilder clamPizza = new PizzaTreeBuilder("Chicago Clam");
         clamPizza.addIngredient("cheese");
         clamPizza.addIngredient("clam");
 

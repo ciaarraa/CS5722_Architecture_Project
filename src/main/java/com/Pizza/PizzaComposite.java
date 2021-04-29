@@ -53,13 +53,13 @@ public class PizzaComposite extends PizzaComponent {
         System.out.println("Name: " + getName() + " total calories: " + getCalories() + " total price: " + getPrice() + "." );
         Iterator<PizzaComponent> iterator = pizzaComponents.iterator();
         while (iterator.hasNext()) {
-            PizzaComponent pizzaComponent = (PizzaComponent) iterator.next();
+            PizzaComponent pizzaComponent = iterator.next();
             pizzaComponent.print();
         }
     }
 
-    public String printString(){
-        return "Name: " + getName() + " total calories: " + getCalories() + " total price: " + getPrice() + ".";
+    public ArrayList<PizzaComponent> getChild(){
+        return pizzaComponents;
     }
 
 }

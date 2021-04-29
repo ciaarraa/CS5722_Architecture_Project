@@ -7,14 +7,13 @@ import com.Pizza.PizzaComponent;
 import com.Pizza.PizzaComposite;
 
 public class ChicagoPepperoniHandler extends PizzaHandler {
-    private final String name = "Chicago Pepperoni";
-    public ChicagoPepperoniHandler(PizzaStore pizzaStore) {
+
+    public ChicagoPepperoniHandler(com.Factory.PizzaStore pizzaStore) {
         super(pizzaStore);
-        setName(name);
     }
 
     public PizzaComponent getPizza(){
-        PizzaTreeBuilder pepperoniPizza = new PizzaTreeBuilder(name);
+        PizzaTreeBuilder pepperoniPizza = new PizzaTreeBuilder("Chicago Pepperoni");
         pepperoniPizza.addIngredient("mozzarella");
         pepperoniPizza.addIngredient("pepperoni");
 

@@ -11,6 +11,14 @@ public class PizzaIngredient extends PizzaComponent implements IngredientPrototy
         this.price = price;
     }
 
+    private PizzaIngredient(PizzaIngredient target) {
+        if (target != null) {
+            this.name = target.name;
+            this.calories = target.calories;
+            this.price = target.price;
+        }
+    }
+
     @Override
     public int getCalories(){
         return calories;
@@ -32,7 +40,7 @@ public class PizzaIngredient extends PizzaComponent implements IngredientPrototy
     }
 
     public PizzaIngredient clone(){
-       return this;
+       return new PizzaIngredient(this);
     }
 }
 

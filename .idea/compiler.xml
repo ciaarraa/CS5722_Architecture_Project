@@ -9,9 +9,16 @@
         <module name="CS5722_Software_Architecture" />
         <module name="CS5722_Project" />
       </profile>
+      <profile name="Annotation profile for Unknown" enabled="true">
+        <sourceOutputDir name="../../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wrapper" />
+      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="wrapper" target="8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
   </component>
 </project>

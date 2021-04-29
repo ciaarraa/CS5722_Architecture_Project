@@ -5,15 +5,13 @@ import com.Factory.PizzaStore;
 import com.Pizza.PizzaComponent;
 
 public class NewYorkClamHandler extends PizzaHandler {
-    private final String name = "New York Clam";
     public NewYorkClamHandler(PizzaStore pizzaStore) {
         super(pizzaStore);
-        setName(name);
     }
 
     @Override
     public PizzaComponent getPizza() {
-        PizzaTreeBuilder clamPizza = new PizzaTreeBuilder(name);
+        PizzaTreeBuilder clamPizza = new PizzaTreeBuilder("New York Clam");
         clamPizza.addIngredient("cheese");
         clamPizza.addIngredient("clam");
 
