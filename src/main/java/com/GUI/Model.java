@@ -5,7 +5,6 @@ import com.PaymentAdapters.CardPaymentInterface;
 import com.PaymentAdapters.MasterCard;
 import com.PaymentAdapters.Stripe;
 import com.PaymentAdapters.StripeAdapter;
-import com.Pizza.Pizza;
 import com.state.Customer;
 import com.state.Order;
 
