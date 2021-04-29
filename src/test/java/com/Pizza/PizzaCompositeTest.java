@@ -1,23 +1,34 @@
 package com.Pizza;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-
-
 public class PizzaCompositeTest {
-    private  PizzaComposite pepperoniPizza;
-    private PizzaIngredient cheese;
-    private PizzaIngredient pepperoni;
 
-    @Before
-    public void setUp() throws Exception {
-         cheese = new PizzaIngredient("Cheese", 150, 1.49);
-         pepperoni = new PizzaIngredient("Pepperoni", 120, 1.49);
+    @Test
+    public void add() {
+    }
 
-        pepperoniPizza = new PizzaComposite("Pepperoni");
+    @Test
+    public void getCaloriesTest() {
+        PizzaIngredient cheese = new PizzaIngredient("Cheese", 150, 1.49);
+        PizzaIngredient pepperoni = new PizzaIngredient("Pepperoni", 120, 1.49);
+
+        PizzaComposite pepperoniPizza = new PizzaComposite("Pepperoni");
+
+        pepperoniPizza.add(cheese);
+        pepperoniPizza.add(pepperoni);
+
+        assertEquals(pepperoniPizza.getCalories(), 150 + 120);
+    }
+
+    @Test
+    public void getPriceTest() {
+        PizzaIngredient cheese = new PizzaIngredient("Cheese", 150, 1.49);
+        PizzaIngredient pepperoni = new PizzaIngredient("Pepperoni", 120, 1.49);
+
+        PizzaComposite pepperoniPizza = new PizzaComposite("Pepperoni");
 
         pepperoniPizza.add(cheese);
         pepperoniPizza.add(pepperoni);
@@ -25,22 +36,6 @@ public class PizzaCompositeTest {
     }
 
     @Test
-    public void getChild() {
-        assertEquals("Cheese", pepperoniPizza.getChild().get(0).getName() );
+    public void getName() {
     }
-
-    @Test
-    public void getCalories() {
-
-        assertEquals(pepperoniPizza.getCalories(), 150 + 120);
-    }
-
-    @Test
-    public void getPrice() {
-
-        assertEquals(pepperoniPizza.getPrice (), 1.49 + 1.49, 0.0001);
-
-    }
-
-
 }
