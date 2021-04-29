@@ -18,7 +18,6 @@ public class ChicagoClamHandlerTest {
 
     @Before
     public void setUp() throws Exception {
-        System.out.println("Setting it up!");
         clamPizza = new PizzaComposite("Chicago Clam");
         clamPizza.add(ingredientsRegistry.getIngredient("clam"));
         clamPizza.add(ingredientsRegistry.getIngredient("cheese"));

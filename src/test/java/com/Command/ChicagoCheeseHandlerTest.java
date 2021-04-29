@@ -18,7 +18,6 @@ public class ChicagoCheeseHandlerTest {
 
     @Before
      public void setUp() throws Exception {
-        System.out.println("Setting it up!");
         cheesePizza = new PizzaComposite("Tasty Cheesy");
         cheesePizza.add(ingredientsRegistry.getIngredient("cheese"));
         cheesePizza.add(ingredientsRegistry.getIngredient("mozzarella"));
