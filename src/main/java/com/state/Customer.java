@@ -3,27 +3,26 @@ package com.state;
 import com.Observer.Icustomer;
 import com.Observer.Imenuable;
 
-public class Customer {
- /*   private int version;
-    private Imenuable imenu;*/
+public class Customer implements Icustomer{
+  private int version;
+    private Imenuable imenu;
     public static final int REGULAR = 1;
     public static final int SILVER = 2;
     public static final int GOLD = 3;
 
     private CustomerLevel _customerLevel;
 
-   // public Customer(Imenuable imenu){
-       // this.imenu =imenu;
-       // imenu.registerCustomer(this);
-  //  }
 
 
-
-    public Customer(CustomerLevel _customerLevel) {
+    public Customer(CustomerLevel _customerLevel, Imenuable imenu) {
+       this.imenu = imenu;
+       imenu.registerCustomer(this);
         this._customerLevel = _customerLevel;
     }
 
-    public Customer() {
+    public Customer(Imenuable imenu) {
+        this.imenu = imenu;
+        imenu.registerCustomer(this);
         this._customerLevel = new RegularLevel();
     }
 
@@ -47,7 +46,7 @@ public class Customer {
 
     }
 
-  /*  @Override
+   @Override
     public void update(int version) {
         this.version = version;
         display();
@@ -56,5 +55,5 @@ public class Customer {
 
     public void display(){
         System.out.println("This version of menu is number:" +version);
-    }*/
+    }
 }

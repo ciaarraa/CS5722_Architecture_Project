@@ -16,11 +16,8 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args){
-      /* Imenu imenu = new Imenu();
-        SimpleCustomer customers = new SimpleCustomer(imenu);
-        imenu.registerCustomer((Icustomer) new Customer());
+        Imenu imenu = new Imenu();
 
-        imenu.notifyCustomers();*/
 
 
 
@@ -40,7 +37,8 @@ public class Main {
 //        chicagoPizzaStore.orderPizza("veggie");
        // chicagoPizzaStore.orderPizza("clam");
 
-        Customer aCustomer = new Customer();
+        Customer aCustomer = new Customer(imenu);
+        imenu.notifyCustomers();
 
         Order anOrder = new Order(aCustomer.get_customerLevel(), pizzas);
 
