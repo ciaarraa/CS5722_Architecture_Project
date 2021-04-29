@@ -27,7 +27,6 @@ public class NYPizzaStoreTest {
 
     @Test
     public void createVeggiePizza() {
-        String nyVeggie = new NYStyleVeggiePizza().getName();
 
         PizzaStore NYPizzaStore = new NYPizzaStore();
         String pizzaName = NYPizzaStore.orderPizza("veggie").getName();
