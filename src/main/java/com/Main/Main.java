@@ -1,9 +1,12 @@
-/*package com.GUI;
+/*package com.Main;
 
 import com.Controller.Controller;
 import com.Factory.ChicagoPizzaStore;
 import com.Factory.NYPizzaStore;
 import com.Factory.PizzaStore;
+import com.GUI.Model;
+import com.Observer.Imenu;
+import com.Observer.Imenuable;
 import com.Pizza.PizzaComponent;
 import com.Views.OrderSummaryView;
 import com.Views.PaymentWindowView;
@@ -15,7 +18,7 @@ import com.state.Order;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class GUI_Test_Main {
+public class Main {
 
 
 
@@ -27,7 +30,8 @@ public class GUI_Test_Main {
             pizzaStores.add(new NYPizzaStore());
             pizzaStores.add(new ChicagoPizzaStore());
 
-            Customer customer = new Customer();
+            Imenuable imenuable = new Imenu();
+            Customer customer = new Customer(imenuable);
             ArrayList<PizzaComponent> pizzas = new ArrayList<>();
 
             Order order = new Order(customer.get_customerLevel(), pizzas);
@@ -49,6 +53,6 @@ public class GUI_Test_Main {
         }
     }
 
+
+
  */
-
-

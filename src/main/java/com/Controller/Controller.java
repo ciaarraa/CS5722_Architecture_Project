@@ -1,4 +1,4 @@
-package com.Controller;
+/*package com.Controller;
 
 import com.GUI.Model;
 import com.Views.OrderSummaryView;
@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Controller {
+    public static final String SELECTED_STORE = "SelectedStore";
     private Model model;
     private JPanel card;
     private ShopFrontView shopFrontView;
@@ -25,6 +26,7 @@ public class Controller {
 
     private PaymentWindowView paymentWindowView;
     private final String PAYMENT = "Payment Window";
+    public static final String ELEMENT_ORDER_FIELD = "Order";
 
     public Controller(JFrame frame, Model model, ShopFrontView shopFrontView , StoreFrontView storeFrontView, OrderSummaryView orderSummaryView,
                       PaymentWindowView paymentWindowView ){
@@ -133,3 +135,5 @@ public class Controller {
     }
 }
 
+
+ */

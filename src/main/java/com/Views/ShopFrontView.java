@@ -1,22 +1,61 @@
 package com.Views;
 
-import javax.swing.*;
+import com.Controller.CustomerController;
+import com.Controller.ViewController;
 
-public class ShopFrontView extends JPanel {
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+
+public class ShopFrontView extends ViewInterface {
+    private CustomerController customerController;
     private JButton nyPizzaStore;
     private JButton chicagoPizzaStore;
+    // private JPanel panel;
+    private final String SHOP_FRONT_VIEW = "ShopFrontView";
 
-    public ShopFrontView(){
+    public ShopFrontView(CustomerController customerController) {
+        this.customerController = customerController;
+        initView();
+    }
+
+    private void initView() {
         this.add(nyPizzaStore = new JButton("NY Pizza Store"));
         this.add(chicagoPizzaStore = new JButton("Chicago Pizza Store"));
+
+
+        nyPizzaStore.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                customerController.changeStore(0);
+                updateView(ViewController.STORE_FRONT_VIEW);
+            }
+        });
+
+        chicagoPizzaStore.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                customerController.changeStore(1);
+                updateView(ViewController.STORE_FRONT_VIEW);
+
+            }
+        });
+
+
     }
 
-    public JButton getNyPizzaStore() {
-        return nyPizzaStore;
+
+
+    public void modelPropertyChange(PropertyChangeEvent evt){
+
     }
 
-    public JButton getChicagoPizzaStore() {
-        return chicagoPizzaStore;
+    public String getName(){
+        return SHOP_FRONT_VIEW;
     }
 
+    private void updateView(String newView){
+        customerController.changeView(newView);
+    }
 }
