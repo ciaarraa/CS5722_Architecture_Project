@@ -6,6 +6,7 @@ import com.Controller.PaymentController;
 import com.Factory.ChicagoPizzaStore;
 import com.Factory.NYPizzaStore;
 import com.Factory.PizzaStore;
+import com.Observer.Imenu;
 import com.Pizza.PizzaComponent;
 import com.state.Customer;
 import com.state.Order;
@@ -13,7 +14,7 @@ import com.state.Order;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Model extends AbstractModel {
+public class CustomerModel extends AbstractModel {
     private Customer customer;
     private Order order;
     private HashMap<String,String> menu;
@@ -21,7 +22,7 @@ public class Model extends AbstractModel {
     private int selectedStore;
     private String view;
 
-    public Model(Customer customer, Order order, ArrayList<PizzaStore> pizzaStores) {
+    public CustomerModel(Customer customer, Order order, ArrayList<PizzaStore> pizzaStores) {
         this.customer = customer;
         this.order = order;
         this.pizzaStores = pizzaStores;
@@ -30,8 +31,8 @@ public class Model extends AbstractModel {
         this.view = " ";
     }
 
-    public Model(){
-        this.customer = new Customer();
+    public CustomerModel(){
+        this.customer = new Customer(new Imenu());
         this.order = new Order(customer.get_customerLevel(), new ArrayList<PizzaComponent>());
         pizzaStores = new ArrayList<>();
         pizzaStores.add(new NYPizzaStore());
@@ -49,16 +50,6 @@ public class Model extends AbstractModel {
         selectedStore = i;
 
     }
-
-  /*  public void setView(String view){
-        String oldView = this.view;
-        this.view = view;
-
-        firePropertyChange("View", oldView, view);
-
-    }
-
-   */
 
 
     public void updateMenu(){

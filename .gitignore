@@ -87,3 +87,11 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+/.idea/compiler.xml
+/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/CS5722_Project.iml
+/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml

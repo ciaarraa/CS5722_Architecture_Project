@@ -1,20 +1,24 @@
-package com.GUI;
+package com.Application;
 
 import com.Controller.AbstractController;
 import com.Controller.CustomerController;
 import com.Controller.PaymentController;
 import com.Controller.ViewController;
+import com.GUI.AbstractModel;
+import com.GUI.CustomerModel;
+import com.GUI.PaymentModel;
+import com.GUI.ViewLayoutModel;
 import com.Interceptor.Dispatcher;
 import com.Views.*;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class MainI {
+public class Main {
 
     public static void main(String[] args) {
         Dispatcher dispatcher = new Dispatcher();
-        AbstractModel m = new Model();
+        AbstractModel m = new CustomerModel();
         AbstractModel paymentModel = new PaymentModel(dispatcher);
         AbstractModel viewModel = new ViewLayoutModel();
 
@@ -52,7 +56,6 @@ public class MainI {
         cardView.addComponentToPane(frame.getContentPane());
 
 
-        //frame.getContentPane().add(jpanTest);
         frame.setSize(500, 120);
         frame.setLocationRelativeTo(null);
 
