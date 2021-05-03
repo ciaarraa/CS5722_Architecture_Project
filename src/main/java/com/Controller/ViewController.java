@@ -1,7 +1,5 @@
 package com.Controller;
 
-import com.GUI.ViewLayoutModel;
-
 public class ViewController extends AbstractController{
     public static  final String VIEW = "View";
     public static final String STORE_FRONT_VIEW = "StoreFrontView";

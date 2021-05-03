@@ -1,4 +1,4 @@
-package com.GUI;
+package com.Model;
 
 public class ViewLayoutModel extends AbstractModel{
     private String view;

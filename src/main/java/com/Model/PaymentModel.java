@@ -1,4 +1,4 @@
-package com.GUI;
+package com.Model;
 
 import com.Controller.PaymentController;
 import com.Interceptor.Dispatcher;

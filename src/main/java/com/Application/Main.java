@@ -4,10 +4,10 @@ import com.Controller.AbstractController;
 import com.Controller.CustomerController;
 import com.Controller.PaymentController;
 import com.Controller.ViewController;
-import com.GUI.AbstractModel;
-import com.GUI.CustomerModel;
-import com.GUI.PaymentModel;
-import com.GUI.ViewLayoutModel;
+import com.Model.AbstractModel;
+import com.Model.CustomerModel;
+import com.Model.PaymentModel;
+import com.Model.ViewLayoutModel;
 import com.Interceptor.Dispatcher;
 import com.Views.*;
 

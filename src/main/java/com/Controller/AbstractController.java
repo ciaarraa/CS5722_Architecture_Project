@@ -1,6 +1,6 @@
 package com.Controller;
 
-import com.GUI.AbstractModel;
+import com.Model.AbstractModel;
 import com.Views.ViewInterface;
 
 import java.beans.PropertyChangeEvent;
