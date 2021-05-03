@@ -1,9 +1,10 @@
-/*package com.GUI;
+/*package com.Main;
 
 import com.Controller.Controller;
 import com.Factory.ChicagoPizzaStore;
 import com.Factory.NYPizzaStore;
 import com.Factory.PizzaStore;
+import com.GUI.Model;
 import com.Observer.Imenu;
 import com.Observer.Imenuable;
 import com.Pizza.PizzaComponent;
@@ -17,7 +18,7 @@ import com.state.Order;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class GUI_Test_Main {
+public class Main {
 
 
 
@@ -52,6 +53,6 @@ public class GUI_Test_Main {
         }
     }
 
+
+
  */
-
-
