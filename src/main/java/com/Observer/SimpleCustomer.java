@@ -15,6 +15,6 @@ public class SimpleCustomer implements Icustomer{
 
     }
     public void display(){
-        System.out.println("This version is :" +version);
+        System.out.println("This version of menu is number:" +version);
     }
 }

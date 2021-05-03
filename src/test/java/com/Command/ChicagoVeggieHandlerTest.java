@@ -18,7 +18,6 @@ public class ChicagoVeggieHandlerTest {
 
     @Before
     public void setUp() throws Exception {
-        System.out.println("Setting it up!");
 
         veggiePizza = new PizzaComposite("Chicago Veggie");
         veggiePizza.add(ingredientsRegistry.getIngredient("peppers"));

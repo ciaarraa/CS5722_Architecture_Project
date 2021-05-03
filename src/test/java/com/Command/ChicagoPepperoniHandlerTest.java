@@ -19,8 +19,6 @@ public class ChicagoPepperoniHandlerTest {
 
     @Before
     public void setUp() throws Exception {
-        System.out.println("Setting it up!");
-
         pepperoniPizza = new PizzaComposite("Chicago Pepperoni");
         pepperoniPizza.add(ingredientsRegistry.getIngredient("mozzarella"));
         pepperoniPizza.add(ingredientsRegistry.getIngredient("pepperoni"));
