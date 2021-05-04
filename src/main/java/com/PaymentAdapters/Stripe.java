@@ -1,35 +1,57 @@
 package com.PaymentAdapters;
 
+import java.util.concurrent.TimeUnit;
+import static com.PaymentAdapters.TransactionCurrency.EUR;
+
 public class Stripe implements StripePaymentInterface {
+    private double transactionAmount;
+    private TransactionType transactionType;
+    private TransactionCurrency transactionCurrency;
+
     @Override
     public boolean makeStripePayment(double billFinalAmount, String AuthToken) {
-        boolean paymentSuccess = false;
-        if (AuthToken != null && !AuthToken.isEmpty()) {
-            System.out.printf("Authorisation received.\n");
-            System.out.printf("Making a payment of %f using Stripe...\n", billFinalAmount);
-            //TimeUnit.SECONDS.sleep(5);
-            paymentSuccess = true;
-        } else {
-            System.out.printf("Payment authorisation error.\n");
-            //TimeUnit.SECONDS.sleep(5);
-            paymentSuccess = false;
-        }
-        return paymentSuccess;
+        TransactionCurrency defaultCurrencyDuringPrototyping = EUR;
+        return makeStripeTransaction(billFinalAmount, defaultCurrencyDuringPrototyping, TransactionType.CHARGE, AuthToken );
     }
 
     @Override
     public boolean refundStripePayment(double refundFinalAmount, String AuthToken) {
-        boolean paymentSuccess = false;
+        TransactionCurrency defaultCurrencyDuringPrototyping = EUR;
+        return makeStripeTransaction(refundFinalAmount, defaultCurrencyDuringPrototyping, TransactionType.REFUND, AuthToken );
+    }
+
+    private boolean makeStripeTransaction(double amount, TransactionCurrency currency, TransactionType transactionType, String AuthToken) {
+        boolean transactionInstructionSentSuccess;
+        boolean transactionConfirmationReceived = false;
         if (AuthToken != null && !AuthToken.isEmpty()) {
-            System.out.printf("Authorisation received.\n");
-            System.out.printf("Making a refund of %f using Stripe...\n", refundFinalAmount);
-            //TimeUnit.SECONDS.sleep(5);
-            paymentSuccess = true;
-        } else {
-            System.out.printf("Refund authorisation error.\n");
-            //TimeUnit.SECONDS.sleep(5);
-            paymentSuccess = false;
+            System.out.println("Stripe Authorisation received.");
+            System.out.printf("Making a %s of %f (%s) using Stripe...\n", transactionType.name(), amount, currency.name());
+            transactionInstructionSentSuccess = sendTransactionInstructionToStripeServer();
+            if (transactionInstructionSentSuccess) {
+                transactionConfirmationReceived = receiveTransactionConfirmationFromStripeServer();
+            }
+        }else {
+            System.out.println("Refund authorisation error.\n");
         }
-        return paymentSuccess;
+        return transactionConfirmationReceived;
+    }
+
+    private boolean sendTransactionInstructionToStripeServer() {
+        // Just a dummy function simulating sending a request
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+    private boolean receiveTransactionConfirmationFromStripeServer() {
+        // Just a dummy function simulating receiving a reply
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }

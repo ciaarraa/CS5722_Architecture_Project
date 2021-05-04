@@ -11,15 +11,31 @@ public class PaymentAdapterTests {
 
         double testAmount = 0.0;
         String testAuthToken = UUID.randomUUID().toString();
-
+        System.out.println("'Vanilla' MasterCard Payment.");
         testCardPayment(card, testAmount);
+        testAmount = testAmount + 1.1;
+        System.out.println("'Vanilla' MasterCard Refund.");
         testCardRefund(card, testAmount);
+
+        testAmount = testAmount + 1.1;
+        System.out.println("\nUse Stripe Adapter to process a Payment, requested by something expecting the old MasterCard interface.");
         testCardPayment(stripeAdapter, testAmount);
+        testAmount = testAmount + 1.1;
+        System.out.println("Use Stripe Adapter to process a Refund, requested by something expecting the old MasterCard interface.");
         testCardRefund(stripeAdapter, testAmount);
 
+        testAmount = testAmount + 1.1;
+        System.out.println("\n'Vanilla' Stripe Payment.");
         testStripePayment(stripe, testAmount, testAuthToken);
+        testAmount = testAmount + 1.1;
+        System.out.println("'Vanilla' Stripe Refund.");
         testStripeRefund(stripe, testAmount, testAuthToken);
+
+        testAmount = testAmount + 1.1;
+        System.out.println("\nUse Card Adapter to process a Payment, requested by something expecting the new Stripe interface.");
         testStripePayment(cardAdapter, testAmount, testAuthToken);
+        testAmount = testAmount + 1.1;
+        System.out.println("Use Card Adapter to process a Refund, requested by something expecting the new Stripe interface.");
         testStripeRefund(cardAdapter, testAmount, testAuthToken);
 
     }

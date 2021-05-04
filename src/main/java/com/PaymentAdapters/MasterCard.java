@@ -39,6 +39,7 @@ public class MasterCard implements CardPaymentInterface{
             transactionConfirmationReceived = receiveTransactionConfirmationFromMastercardServer();
         }
         if (transactionConfirmationReceived) {
+            System.out.printf("Making a %s of %f (%s) using MasterCard...\n", transactionType.name(), amount, currency.name());
             // create new context object per event
             PaymentEventContextObject paymentContext = new PaymentEventContextObject(this);
             // and pass it to the dispatcher when calling back
