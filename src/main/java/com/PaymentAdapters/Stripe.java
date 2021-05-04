@@ -11,21 +11,25 @@ public class Stripe implements StripePaymentInterface {
     @Override
     public boolean makeStripePayment(double billFinalAmount, String AuthToken) {
         TransactionCurrency defaultCurrencyDuringPrototyping = EUR;
-        return makeStripeTransaction(billFinalAmount, defaultCurrencyDuringPrototyping, TransactionType.CHARGE, AuthToken );
+        return makeStripeTransaction(billFinalAmount, defaultCurrencyDuringPrototyping,
+                TransactionType.CHARGE, AuthToken );
     }
 
     @Override
     public boolean refundStripePayment(double refundFinalAmount, String AuthToken) {
         TransactionCurrency defaultCurrencyDuringPrototyping = EUR;
-        return makeStripeTransaction(refundFinalAmount, defaultCurrencyDuringPrototyping, TransactionType.REFUND, AuthToken );
+        return makeStripeTransaction(refundFinalAmount, defaultCurrencyDuringPrototyping,
+                TransactionType.REFUND, AuthToken );
     }
 
-    private boolean makeStripeTransaction(double amount, TransactionCurrency currency, TransactionType transactionType, String AuthToken) {
+    private boolean makeStripeTransaction(double amount, TransactionCurrency currency,
+                                          TransactionType transactionType, String AuthToken) {
         boolean transactionInstructionSentSuccess;
         boolean transactionConfirmationReceived = false;
         if (AuthToken != null && !AuthToken.isEmpty()) {
             System.out.println("Stripe Authorisation received.");
-            System.out.printf("Making a %s of %f (%s) using Stripe...\n", transactionType.name(), amount, currency.name());
+            System.out.printf("Making a %s of %f (%s) using Stripe...\n",
+                    transactionType.name(), amount, currency.name());
             transactionInstructionSentSuccess = sendTransactionInstructionToStripeServer();
             if (transactionInstructionSentSuccess) {
                 transactionConfirmationReceived = receiveTransactionConfirmationFromStripeServer();
